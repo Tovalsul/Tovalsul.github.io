@@ -1,7 +1,3 @@
-
-let morkoAlusta = document.createElement("div");
-morkoAlusta.setAttribute("class", "morkoalusta");
-
 /*window.setInterval(teeKarpasia, 3000);
 setTimeout(teeKarpasia, 6000);*/
 
@@ -23,7 +19,10 @@ function teeKarpasia(){
 	
 	for (let i = 0; i < 100; i++){
 	var karpanenKuva = document.createElement("IMG");
+	let morkoAlusta = document.createElement("div");
 	
+	// Ominaisuudet kärpäsille ja niiden alustoille.
+	morkoAlusta.setAttribute("class", "morkoalusta");
 	karpanenKuva.setAttribute("src", "kuvat/karpanen-removebg-preview.png");
 	karpanenKuva.setAttribute("width", "20px");
 	karpanenKuva.setAttribute("height", "20px");
@@ -31,7 +30,9 @@ function teeKarpasia(){
 	karpanenKuva.setAttribute("class", "karpanen");
 	karpanenKuva.setAttribute("onclick", "kuollutKarpanen()");
 	
-	document.body.morkoAlusta.appendChild(karpanenKuva);
+	// Tässä tehtiin erikseen alusta johon liitettiin kärpänen jotta voidaan kiertää yhden animaation rajoitus ja saadaan liikettä vähän randomimmaksi.
+	document.body.appendChild(morkoAlusta);
+	morkoAlusta.appendChild(karpanenKuva);
 	}
 }
 
