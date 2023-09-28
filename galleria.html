@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+	<head>
+		<script src="paint.js" defer></script>
+		<link rel="stylesheet" href="paint.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>Galleria</h1>
+		<p>Tällä sivulla on tekemääni paint-taidetta.</p>
+		<b><a href="index.html">Etusivulle</a></b>
+		<div class="kuvalaatikko">
+			<div class="kuva">
+				<div class="kuvanumero">1/4</div>
+					<img src="kuvat/porkkanakana.jpg" alt="porkkanakana">
+				<div ="kuvateksti">Porkkanakana</div>
+			</div>
+			<div class="kuva">
+				<div class="kuvanumero">2/4</div>
+					<img src="kuvat/taidekuva1.png" alt="viiksekäs sienimies">
+				<div ="kuvateksti">Sieniukko</div>
+			</div>
+			<div class="kuva">
+				<div class="kuvanumero">3/4</div>
+					<img src="kuvat/taa_lahtee_paint.jfif" alt="kissa repii töpseliä irti seinästä.">
+				<div ="kuvateksti">Tää lähtee paint versio</div>
+			</div>
+			<div class="kuva">
+				<div class="kuvanumero">4/4</div>
+					<img src="kuvat/oispa_kaljaa_gin_paint.jfif" alt="Koira jolla on vähän hölmönnäköinen ilme.">
+				<div ="kuvateksti">Oispa kaljaa</div>
+			</div>
+		</div>
+		<!-- Next and previous buttons -->
+		  <a class="edellinen" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="seuraava" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+		  <span class="pallo" onclick="currentSlide(1)"></span>
+		  <span class="pallo" onclick="currentSlide(2)"></span>
+		  <span class="pallo" onclick="currentSlide(3)"></span>
+		  <span class="pallo" onclick="currentSlide(4)"></span>
+		</div>
+	</body>
+</html>

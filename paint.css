@@ -1,0 +1,188 @@
+body {
+	background-image: linear-gradient(to bottom right, #6AFF8B, #6EE8FF);
+	text-align: center;
+	background-color: #00FF00;
+}
+
+#otsikko{
+	color: #FF0000;
+	animation: vari 3s 1;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	text-shadow: -1px 0 black, 1px 0 black, 1px 0 black, 0 -1px black;
+}
+
+span {
+	position: relative;
+	animation: tipu 5s 1;
+	opacity: 0;
+}
+
+@keyframes vari {
+	0% {color: #FF0000}
+	50% {color: #00FF00; font-style: italic;}
+	100% {color: #0000FF; font-style: normal;}
+}
+
+@keyframes tipu {
+	0% {left: 0px; top:0px; opacity: 100;}
+	95% {left:0px; top:0px; opacity: 100;}
+	100% {left:0px; top:500px; opacity: 0;}
+}
+
+img {
+	max-width: 50%;
+	height: auto;
+	object-fit: contain;
+}
+
+.morkoalusta {
+	position: relative;
+	animation: liike 10s 1;
+	animation-iteration-count: infinite;
+}
+
+
+#morko {
+	/* Yritin saada mörön liikkumaan paikasta toiseen sen
+	sen aikana kun se on piilossa mutta ilmeisesti ei voi käyttää kahta
+	animaatiota samaan aikaan vaan ne pitää saada säädettyä limittäin
+	jotta se toimii niin kuin ajattelin.*/
+	position: relative;
+	opacity: 50%;
+	height: 10%;
+	width: 10%;
+	/* Kokeile monen animaation jonottamista jos se toimisi.*/
+	animation: säikäytys 5s 1, liike 8s 1;
+	animation-direction: reverse;
+	animation-timing-function: ease-out;
+	/*animation-delay: 3s;*/
+	animation-iteration-count: infinite;
+}
+
+.karpanen {
+	position: relative;
+	height: 5%;
+	width: 5%;
+	animation: liike 1.5s 1, pyöri 0.3s 1, liike 4s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+@keyframes säikäytys {
+	0% {opacity: 0%}
+	10% {opacity: 90%}
+	20% {opacity: 0%}
+	100% {opacity: 0%}
+}
+
+@keyframes liike {
+	0% {left: 0px; top: -200pxpx;}
+	25% {left: 200px; top: 0px;}
+	50% {left: 200px; top: 200px;}
+	75% {left: 0px; top: 200px;}
+	100% {left: 0px; top: 0px;}
+}
+
+@keyframes pyöri{
+	0% {transform: rotate(20deg);}
+	30% {transform: rotate(80deg);}
+	50% {transform: rotate(160deg);}
+	70% {transform: rotate(240deg);}
+	90% {transform: rotate(300deg);}
+	100% {transform: rotate(360deg);}
+}
+
+/* {box-sizing:border-box}*/
+
+/* Slideshow container */
+.kuvalaatikko {
+  width:75%;
+  height:75%;
+  max-width: 1000px;
+  position: relative;
+}
+
+/* Piilottaa kuvat oletuksena. */
+.kuva {
+  display: none;
+  object-fit: contain;
+}
+
+/* painikkeet edelliselle kuvalle ja seuraavalle kuvalle */
+.edellinen, .seuraava {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.edellinen {
+	left: 0px;
+}
+
+/* Position the "next button" to the right */
+.seuraava {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.edellinen:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.kuvateksti {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.kuvanumero {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.pallo {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .pallo:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
