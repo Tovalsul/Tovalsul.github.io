@@ -1,23 +1,19 @@
-/*window.setInterval(teeKarpasia, 3000);
-setTimeout(teeKarpasia, 6000);*/
 
-/* Selvitä miten saat referoitua kuvia javascriptissä oikein.*/
+var kuolleetKarpasetCounter = 0;
+var karpaset = 0;
 
 function myohaistaAlert(){
 	alert("Nyt on jo liian myöhäistä...");
 }
 
-function kuollutKarpanen(){
-	var kuollutKarpanenKuva = document.createElement("IMG");
-	kuollutKarpanenKuva.setAttribute("src", "kuvat/karpanen_liiskattu-removebg-preview.png");
-}
 
 /* Tee kärpäsgeneraattori joka puolen sekunnin välein luo uuden 
 kärpäsen kunnes niitä on vaikka 100*/
 function teeKarpasia(){
 	
-	
-	for (let i = 0; i < 100; i++){
+	setTimeout(teeKarpasia, 300);
+	karpaset++;
+	if (karpaset < 100){
 	var karpanenKuva = document.createElement("IMG");
 	let morkoAlusta = document.createElement("div");
 	
@@ -28,13 +24,21 @@ function teeKarpasia(){
 	karpanenKuva.setAttribute("height", "20px");
 	karpanenKuva.setAttribute("alt", "Kärpänen");
 	karpanenKuva.setAttribute("class", "karpanen");
-	karpanenKuva.setAttribute("onclick", "kuollutKarpanen()");
+	karpanenKuva.addEventListener("click", function kuollutKarpanen(){
+		karpanenKuva.setAttribute("class", "kuollutKarpanen");
+		karpanenKuva.setAttribute("src", "kuvat/karpanen_liiskattu-removebg-preview.png");
+	
+		kuolleetKarpasetCounter++;
+		document.getElementById("kuolleidenMaara").innerHTML = kuolleetKarpasetCounter;
+	});
 	
 	// Tässä tehtiin erikseen alusta johon liitettiin kärpänen jotta voidaan kiertää yhden animaation rajoitus ja saadaan liikettä vähän randomimmaksi.
 	document.body.appendChild(morkoAlusta);
 	morkoAlusta.appendChild(karpanenKuva);
 	}
 }
+
+
 
 let slideIndex = 1;
 showSlides(slideIndex);

@@ -1,7 +1,12 @@
 body {
 	background-image: linear-gradient(to bottom right, #6AFF8B, #6EE8FF);
+	background-attachment: fixed;
 	text-align: center;
 	background-color: #00FF00;
+}
+
+.kiellettySivu {
+	
 }
 
 #keskenKyltti {
@@ -77,11 +82,18 @@ img {
 
 .karpanen {
 	position: relative;
+	float: left;
 	height: 5%;
 	width: 5%;
 	animation: liike 1.5s 1, pyöri 0.3s 1, liike 4s;
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
+}
+
+.kuollutKarpanen {
+	position: fixed;
+	height: 5%;
+	width:5%;
 }
 
 @keyframes heilu {
