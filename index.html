@@ -3,25 +3,23 @@
 	<head>
 		<script src="paint.js" defer></script>
 		<link rel="stylesheet" href="paint.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+		<meta name="kuvaus" content="Paint-taidetta">
+		<meta name="keywords" content="paint, taide">
+		<meta name="author" content="Minä">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Etusivu</title>
 	</head>
 	<body>
 		<!-- Muista myös että muilta sivuilta täytyy päästä vähintää takaisin pääsivulle (index.html)
 			Voit tässä vaiheessa tehdä vain tekstipohjaisen navigaation. Opimme myöhemmin tekemään sen kuvilla/painikkeilla-->
 		
-		<img src="kuvat/kesken_kyltti-removebg-preview.png" alt="varoituskyltti" id="keskenKyltti" onclick="hups()">
+		<a href="https://github.com/Tovalsul" target="_blank"><img src="kuvat/kesken_kyltti-removebg-preview.png" alt="varoituskyltti" id="keskenKyltti"></a>
 		<!-- keskenkyltti rikkoi otsikon muodon jostain kumman syystä niinpä korjasin sen lisäämällä 5 <br> elementtiä.-->
-		<br>
-		<br>
-		<br>
-		<br>
 		<!-- Flex-laastari div on väliaikaisesti kunnes keksin miten saan kaikki elementit suunnilleen ruudun keskelle.-->
 		<div id="flexlaastari">
-		<br>
 		<!-- pre elementti on ASCII-tyylitetyllä otsikkoa varten. Ilman sitä tulee iso risuaita mössö.-->
-			<pre>
-				<h1 id="otsikko">
+				<pre id="otsikko">
 				<!-- laitoin span elementin risuaitojen ympärille jotta saan otsikon ensimmäisen kirjaimen putoamaan.-->
 <span>######</span>                         
 <span>#</span>     <span>#</span>   ##   # #    # #####       
@@ -37,18 +35,24 @@
   #   #    # # #    # #####  
   #   ###### # #    # #      
   #   #    # # #    # #      
-  #   #    # # #####  ###### 
-				  </h1>
-			</pre>
+  #   #    # # #####  ######
+</pre>
 			<!-- morkoalustalla kierretään CSS-animaatioiden yhden animaation rajoitus, liittämällä kuva siihen
 			 ja laittamaan molemmat liikkumaan eri aikaan.-->
 			<div class="morkoalusta">
 				<img src="kuvat/morkopussi-removebg-preview.png" alt="morko" id="morko">
 			</div>
-			<p>Tällä sivulla on minun tekemää paint taidetta. <br>Alla olevasta linkistä löydät minun taidegallerian.<p>
-			<a href="galleria.html">Paint galleria</a>
-			<h2><a href="kiellettysivu.html">MITÄ IKINÄ TEETKIN NIIN ÄLÄ!</a></h2>
-			<p><em>Älä paina yllä olevaa linkkiä.</em></p>
+			<header>
+				<h2>Sivustosta</h2>
+				<p>Minusta paint on paras ohjelma, pidän sillä tehdystä tökeröstäkin taiteesta ja tältä sivustolta löydät minun tekemää paint-taidetta. <br>Alla olevasta linkistä löydät minun paint-taidegallerian.<p>
+			</header>
+			<nav>
+				<a href="galleria.html">Paint galleria</a>
+				<h2><a href="kiellettysivu.html">MITÄ IKINÄ TEETKIN NIIN ÄLÄ!</a></h2>
+				<p><em>Älä paina yllä olevaa linkkiä.</em></p>
+				<p>Painammalla "keskeneräinen sivusto"-kylttiä pääset katsomaan minun githubia.<p>
+				<button onclick="getElementById('painike').innerHTML = 'Valehtelin :P'" id="painike"><strong>Älä paina! Tämä nappi ei tee yhtään mitään.</strong></button>
+			</nav>
 		</div>
 	</body>
 </html>
